@@ -23,7 +23,6 @@ struct Ghost
     int direction; // 0-up 1-down 2-left 3-right
 };
 int get_ghost_positions(struct Position *positions, int max_positions);
-int try_direction(struct Position pos, int direction); // use rand(seed)%4 to generate random number
 int move_ghost(struct Ghost *ghost);
 int return_ghost_next_position(struct Position pos); // final（最终返回值）
 
