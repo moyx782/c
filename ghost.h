@@ -11,21 +11,22 @@ extern char map[25][35];
 // 设置随机种子：如果传入 0 则使用 time(NULL) 作为种子（非确定性），
 // 否则使用传入的值以便可复现。
 void set_seed(unsigned int s);
-unsigned int get_seed(void);
 
 struct Position
 {
-    int row;
-    int col;
+    int i; // hang
+    int j; // lie
 };
 struct Ghost
 {
     struct Position pos;
-    int direction;
+    int direction; // 0-up 1-down 2-left 3-right
 };
+int get_ghost_positions(struct Position *positions, int max_positions);
 int try_direction(struct Position pos, int direction); // use rand(seed)%4 to generate random number
 int move_ghost(struct Ghost *ghost);
 int return_ghost_next_position(struct Position pos); // final（最终返回值）
+
 /*
 统一吃豆人地图大小要求20*20
 rand(seed)

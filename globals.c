@@ -22,23 +22,3 @@ char map[25][35] = {0};
 // 如果 positions 为 NULL，则仅返回总数。
 // struct Position 假设在 ghost.h 中定义为:
 //     struct Position { int row; int col; };
-int get_ghost_positions(struct Position *positions, int max_positions)
-{
-    int found = 0;
-    for (int r = 0; r < 25; r++)
-    {
-        for (int c = 0; c < 35; c++)
-        {
-            if (map[r][c] == 'G')
-            {
-                if (positions != NULL && found < max_positions)
-                {
-                    positions[found].row = r;
-                    positions[found].col = c;
-                }
-                found++;
-            }
-        }
-    }
-    return found; // 地图上鬼的总数（可能大于 max_positions）
-}
