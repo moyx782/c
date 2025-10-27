@@ -1,10 +1,12 @@
 #include "ghost.h"
+#define MAP_ROWS 25
+#define MAP_COLS 35
 int get_ghost_positions(struct Position *positions, int max_positions)
 {
     int found = 0;
-    for (int r = 0; r < 25; r++)
+    for (int r = 0; r < MAP_ROWS; r++)
     {
-        for (int c = 0; c < 35; c++)
+        for (int c = 0; c < MAP_COLS; c++)
         {
             if (map[r][c] == 'G')
             {
