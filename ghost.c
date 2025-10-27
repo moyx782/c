@@ -1,8 +1,8 @@
 #include "ghost.h"
-#define MAP_ROWS 25
-#define MAP_COLS 35
-int get_ghost_positions(struct Position *positions, int max_positions)
+int ghost_number;
+int get_ghost_positions(char map[MAP_ROWS][MAP_COLS])
 {
+    struct Position positions[MAX_GHOSTS];
     int found = 0;
     for (int r = 0; r < MAP_ROWS; r++)
     {
@@ -10,11 +10,12 @@ int get_ghost_positions(struct Position *positions, int max_positions)
         {
             if (map[r][c] == 'G')
             {
-                if (positions != NULL && found < max_positions)
+                if (positions != NULL && found < MAX_GHOSTS)
                 {
                     positions[found].i = r; // hang
                     positions[found].j = c; // lie
-                    // 读取到（i,j）处存在一个幽灵
+                    // 读取到（i,j）处存在一个position[found]幽灵def as  ghost[found]
+                    ghost[found].pos = positions[found];
                 }
                 found++;
             }
@@ -71,6 +72,7 @@ int try_direction(struct Position *pos, int direction)
 
 void move_ghost(struct Ghost *ghost)
 {
+try_again:
     int moved = 0;
     int direction = get_ghost_direction(seed_value); // 假设 seed_value 是全局或可见的
     if (try_direction(&ghost->pos, direction))
@@ -78,7 +80,10 @@ void move_ghost(struct Ghost *ghost)
         ghost->direction = direction;
         moved = 1;
     }
-
+    else
+    {
+        goto try_again;
+    }
     if (moved)
     {
         int old_i = ghost->pos.i;
@@ -92,5 +97,14 @@ void move_ghost(struct Ghost *ghost)
             ghost->pos.j--;
         else if (ghost->direction == 3)
             ghost->pos.j++;
+    }
+}
+
+void move_all_the_ghosts()
+{
+    ghost_number = get_ghost_positions(0);
+    for (int i = 0; i < ghost_number; i++)
+    {
+        move_ghost(&ghost[i]);
     }
 }
