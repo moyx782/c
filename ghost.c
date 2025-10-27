@@ -66,22 +66,22 @@ int try_direction(struct Position *pos, int direction)
     }
     return 1; // 可以移动
 }
+
 void move_ghost(struct Ghost *ghost)
 {
-    int Flag = 0;
-    int direction = get_ghost_direction(seed_value);
+    int moved = 0;
+    int direction = get_ghost_direction(seed_value); // 假设 seed_value 是全局或可见的
     if (try_direction(&ghost->pos, direction))
     {
         ghost->direction = direction;
-        Flag = 1; // 移动成功
+        moved = 1;
     }
-    Flag = 0; // 移动失败
-    if (Flag == 1)
+
+    if (moved)
     {
-        // 更新地图
         int old_i = ghost->pos.i;
         int old_j = ghost->pos.j;
-        // 计算新位置
+
         if (ghost->direction == 0)
             ghost->pos.i--;
         else if (ghost->direction == 1)
@@ -90,8 +90,8 @@ void move_ghost(struct Ghost *ghost)
             ghost->pos.j--;
         else if (ghost->direction == 3)
             ghost->pos.j++;
-        // 更新地图上的幽灵位置
-        map[old_i][old_j] = ' ';               // 原位置留空
-        map[ghost->pos.i][ghost->pos.j] = 'G'; // 新位置放幽灵
+
+        map[old_i][old_j] = ' ';
+        map[ghost->pos.i][ghost->pos.j] = 'G';
     }
 }
