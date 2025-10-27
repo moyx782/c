@@ -6,8 +6,6 @@
 // #include "map.h"
 // 全局种子值（通过 set_seed 初始化），在 seed.c 中定义
 extern unsigned int seed_value;
-
-extern char start[5][5];
 extern char map[25][35];
 
 // 设置随机种子：如果传入 0 则使用 time(NULL) 作为种子（非确定性），
@@ -20,7 +18,6 @@ struct Position
     int row;
     int col;
 };
-
 struct Ghost
 {
     struct Position pos;
@@ -32,8 +29,8 @@ int move_ghost(struct Ghost *ghost);
 统一吃豆人地图大小要求20*20
 rand(seed)
 初始化地图
-提取地图大小
-设定ghost的初始位置
+提取地图大小25*35
+设定ghost的初始位置)(地图手动设置)需要手动填写坐标初始
 侦测ghost位置
 不与wall重合
 
