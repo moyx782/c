@@ -25,6 +25,7 @@ struct Ghost
 };
 int try_direction(struct Position pos, int direction); // use rand(seed)%4 to generate random number
 int move_ghost(struct Ghost *ghost);
+int return_ghost_next_position(struct Position pos); // final（最终返回值）
 /*
 统一吃豆人地图大小要求20*20
 rand(seed)
