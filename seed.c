@@ -10,7 +10,10 @@ void set_seed(unsigned int s)
     seed_value = s;
     if (s == 0)
     {
-        srand((unsigned int)time(NULL));
+        unsigned int real_seed = (unsigned int)time(NULL);
+        seed_value = real_seed;
+        printf("seed: %u\n", seed_value);
+        srand(real_seed);
     }
     else
     {
