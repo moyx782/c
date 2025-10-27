@@ -92,8 +92,5 @@ void move_ghost(struct Ghost *ghost)
             ghost->pos.j--;
         else if (ghost->direction == 3)
             ghost->pos.j++;
-
-        map[old_i][old_j] = ' ';
-        map[ghost->pos.i][ghost->pos.j] = 'G';
     }
 }
