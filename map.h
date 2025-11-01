@@ -1,4 +1,6 @@
 // 头文件
+#ifndef MAP_H // 唯一标识宏（通常用"头文件名_H"大写）
+#define MAP_H
 
 #define MAX_ROWS 25 // 地图最大行数
 #define MAX_COLS 40 // 地图最大列数
@@ -50,3 +52,5 @@ int you_nengliangdou(const Ditu *ditu);                                         
 int zhichi_shuiguo(const Ditu *ditu);                                               // 检查是否支持水果
 int jihuo_nengliangdou(Ditu *ditu, int hang, int lie);                              // 激活能量豆
 void chongzhi_ditu(Ditu *ditu);                                                     // 重启地图
+
+#endif // 结束唯一标识宏

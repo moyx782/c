@@ -2,6 +2,10 @@
     "files.associations": {
         "time.h": "c",
         "stdio.h": "c",
-        "ghost.h": "c"
+        "ghost.h": "c",
+        "map.h": "c",
+        "stdlib.h": "c",
+        "ctype.h": "c",
+        "marks and blood.h": "c"
     }
 }
