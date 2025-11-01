@@ -23,7 +23,7 @@ typedef struct Entity
     char type;       // 实体类型：'P'(Pac-Man)、'G'(幽灵)
 } Entity;
 
-typedef struct Game
+struct Game // 游戏状态结构体：集中管理得分、血量及所有游戏数据
 {
     int map_rows;          // 地图行数（最大25）
     int map_cols;          // 地图列数（最大40）
@@ -36,7 +36,7 @@ typedef struct Game
     int remaining_pellets; // 剩余 pellets 数量（判断胜利条件）
     unsigned int rng_seed; // 随机数种子（保证确定性）
     int game_over;         // 游戏结束标志：0(运行中)、1(胜利)、2(失败)
-} Game;
+};
 void init_game(Game *game, unsigned int seed, int ghost_num);
 void update_map_entities(Game *game);
 void render_game(const Game *game);

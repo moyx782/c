@@ -1,13 +1,13 @@
 
 #include "ghost.h"
 int ghost_number;
-int get_ghost_positions(char map[MAP_ROWS][MAP_COLS])
+int get_ghost_positions(char map[MAX_ROWS][MAX_COLS])
 {
     struct Position positions[MAX_GHOSTS];
     int found = 0;
-    for (int r = 0; r < MAP_ROWS; r++)
+    for (int r = 0; r < MAX_ROWS; r++)
     {
-        for (int c = 0; c < MAP_COLS; c++)
+        for (int c = 0; c < MAX_COLS; c++)
         {
             if (map[r][c] == 'G')
             {
