@@ -112,7 +112,7 @@ void check_ghost_collision(Game *game)
         {
             // 碰撞发生：减少血量
             game->lives--;
-            printf("\n【碰撞警告】碰到幽灵！剩余血量：%d\n", game->lives);
+            printf("\nWarining!The blood letf is：%d\n", game->lives);
 
             // 检查血量是否为0（失败条件）
             if (game->lives <= 0)
@@ -182,19 +182,19 @@ void render_game(const Game *game, )
 
     // 2. 打印游戏状态（得分、血量、剩余Pellets、帧数）
     printf("\n=====================================");
-    printf("\n  得分 (Score): %d", game->score);
-    printf("\n  剩余血量 (Lives): %d", game->lives);
-    printf("\n  剩余Pellets: %d", game->remaining_pellets);
-    printf("\n  操作：W(上) A(左) S(下) D(右) Q(退出)");
+    printf("\n  Score: %d", game->score);
+    printf("\n  Lives: %d", game->lives);
+    printf("\n  left Pellets: %d", game->remaining_pellets);
+    printf("\n  action：W(up) A(letf) S(down) D(right) Q(out)");
     printf("\n=====================================\n");
 
     // 3. 打印游戏结束信息（如果游戏结束）
     if (game->game_over == 1)
     {
-        printf("\n【游戏胜利】恭喜！你吃完了所有Pellets！\n");
+        printf("\nVictoty! You have eaten all Pellets！\n");
     }
     else if (game->game_over == 2)
     {
-        printf("\n【游戏失败】血量耗尽！最终得分：%d\n", game->score);
+        printf("\nLoss! The blood runs out：%d\n", game->score);
     }
 }
