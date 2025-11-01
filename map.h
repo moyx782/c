@@ -1,6 +1,5 @@
 // 头文件
 
-#define MAP_H
 #define MAX_ROWS 25 // 地图最大行数
 #define MAX_COLS 40 // 地图最大列数
 

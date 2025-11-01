@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-
+#include "game.h"
 // 基础数据结构定义
 typedef struct
 {

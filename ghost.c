@@ -1,3 +1,4 @@
+
 #include "ghost.h"
 int ghost_number;
 int get_ghost_positions(char map[MAP_ROWS][MAP_COLS])
