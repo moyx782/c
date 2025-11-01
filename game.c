@@ -1,29 +1,4 @@
 #include "game.h"
-// 基础数据结构定义
-typedef struct
-{
-    int r, c;
-} Pos;
-
-typedef struct
-{
-    Pos pos;
-    Pos start;
-    int dr, dc;
-} Entity;
-
-typedef struct
-{
-    int rows, cols;
-    char board[25][40];
-    Entity pacman;
-    Entity ghosts[4];
-    int ghostCount;
-    int score;
-    int lives;
-    int foodLeft;
-    unsigned int seed;
-} Game;
 
 // 初始化地图（示例）
 void initBoard(Game *g)
@@ -194,13 +169,4 @@ void gameLoop(Game *g)
         printf("🎉 You win! Final score: %d\n", g->score);
     else
         printf("Game Over! Final score: %d\n", g->score);
-}
-
-int main()
-{
-    Game game;
-    initBoard(&game);
-    srand(42); // 固定种子（可扩展为命令行参数）
-    gameLoop(&game);
-    return 0;
 }
