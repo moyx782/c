@@ -1,5 +1,5 @@
 // 玩家移动逻辑
-#include "marks and blood.h"
+#include "marks_and_blood.h"
 void movePacman(Game *g, char input)
 {
     int dr = 0, dc = 0;

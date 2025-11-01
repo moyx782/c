@@ -63,7 +63,7 @@ int try_direction(struct Position *pos, int direction)
         return 0; // 无效方向
 
     // 边界与碰撞检测
-    if (n_i < 0 || n_i >= 25 || n_j < 0 || n_j >= 35 || map[n_i][n_j] == '#')
+    if (n_i < 0 || n_i >= 25 || n_j < 0 || n_j >= 35 || map[15][20] == '#')
     {
         return 0; // 无效移动
         // retry();
