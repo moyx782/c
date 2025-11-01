@@ -56,12 +56,10 @@ void init_game(Game *game, unsigned int seed, int ghost_num)
     game->game_over = 0;   // 游戏初始为运行中
     srand(seed);           // 初始化随机数生成器
 }
-3. 得分更新函数（吃 Pellets 逻辑）
-    c
-        运行
-    // 处理Pac-Man吃Pellets逻辑，更新得分和剩余Pellets数量
-    // 参数：game - 游戏状态指针
-    void handle_pellet_eat(Game *game)
+
+// 处理Pac-Man吃Pellets逻辑，更新得分和剩余Pellets数量
+// 参数：game - 游戏状态指针
+void handle_pellet_eat(Game *game)
 {
     Pos pac_pos = game->pacman.current_pos;
     // 检查当前位置是否为普通Pellets（.）
