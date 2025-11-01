@@ -26,7 +26,7 @@ extern unsigned int seed_value;
 // 否则使用传入的值以便可复现。
 void set_seed(unsigned int s);
 
-int get_ghost_positions();
+int get_ghost_positions(char map[MAX_ROWS][MAX_COLS]);
 void move_ghost(struct Ghost *ghost);
 int return_ghost_next_position(struct Position pos); // final（最终返回值）
 
